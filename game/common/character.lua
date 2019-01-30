@@ -5,7 +5,9 @@ local Character = new(Object) {
     charname   = nil,
     avatar     = nil,
     power      = nil,
-    speed      = nil
+    speed      = nil,
+    energy_max = nil,
+    energy_now = nil
 }
 
 function Character:init()
@@ -15,6 +17,7 @@ function Character:init()
     avatar     = self.avatar
     power      = self.power or 20
     speed      = self.speed or 20
+    energy
 end
 
 function Character:updateLife(dano)
