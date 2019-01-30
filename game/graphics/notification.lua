@@ -2,16 +2,16 @@
 local font_loader = require 'graphics.font_loader'
 
 local Notification = new 'graphics.drawable' {
-  text = 'text',
-  font = nil,
+  text  = 'text',
+  font  = nil,
   color = {.9,.4,.3}
 }
 
 function Notification:init()
   self.timer_max = 1
-  self.timer = self.timer_max
-  self.font = self.font or font_loader:get("regular", 32)
-  self.speed = 64
+  self.timer     = self.timer_max
+  self.font      = self.font      or font_loader:get("regular", 32)
+  self.speed     = 64
 end
 
 function Notification:update(dt)
@@ -23,9 +23,9 @@ function Notification:update(dt)
 end
 
 function Notification:onDraw()
-  local g = love.graphics
-  local tx = -self.font:getWidth(self.text)/2
-  local ty = -self.font:getHeight(self.text)/2
+  local g     = love.graphics
+  local tx    = -self.font:getWidth(self.text)/2
+  local ty    = -self.font:getHeight(self.text)/2
   local alpha = self.timer/self.timer_max
   font_loader:use(self.font)
   g.push()
@@ -38,4 +38,3 @@ function Notification:onDraw()
 end
 
 return Notification
-

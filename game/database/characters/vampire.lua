@@ -4,4 +4,3 @@ return {
     sprite = 'female-vampire',
     charname = 'vampire',
 }
-

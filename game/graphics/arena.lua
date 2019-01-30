@@ -11,4 +11,3 @@ function Arena:onDraw()
 end
 
 return Arena
-

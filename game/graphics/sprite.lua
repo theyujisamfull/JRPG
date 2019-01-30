@@ -1,8 +1,8 @@
 
 local Sprite = new 'graphics.drawable' {
   filename = "none",
-  color = nil,
-  hotspot = nil
+  color    = nil,
+  hotspot  = nil
 }
 
 function Sprite:loadImage()
@@ -27,4 +27,3 @@ function Sprite:onDraw()
 end
 
 return Sprite
-

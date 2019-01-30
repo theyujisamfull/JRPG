@@ -25,4 +25,3 @@ function Bar:onDraw()
 end
 
 return Bar
-

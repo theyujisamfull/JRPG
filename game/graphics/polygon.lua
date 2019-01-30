@@ -1,6 +1,6 @@
 
 local Polygon = new 'graphics.drawable' {
-  mode = 'fill',
+  mode     = 'fill',
   vertices = nil
 }
 
@@ -14,4 +14,3 @@ function Polygon:onDraw()
 end
 
 return Polygon
-

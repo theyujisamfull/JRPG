@@ -2,17 +2,17 @@
 local font_loader = require 'graphics.font_loader'
 
 local Menu = new 'graphics.drawable' {
-  box = new(Box) {-10, 10, -30, 30},
+  box     = new(Box) {-10, 10, -30, 30},
   options = nil,
-  cursor = 0,
+  cursor  = 0,
 }
 
 function Menu:init()
-  self.options = {}
-  self.bg_color = {.05, .05, .2}
+  self.options      = {}
+  self.bg_color     = {.05, .05, .2}
   self.border_color = {1, 1, 1}
-  self.text_color = {1, 1, 1}
-  self.font = font_loader:get('regular', 25)
+  self.text_color   = {1, 1, 1}
+  self.font         = font_loader:get('regular', 25)
 end
 
 function Menu:add(name, callback)
@@ -43,9 +43,7 @@ function Menu:onDraw()
       if i == self.cursor then
         local padding = 10
         g.setLineWidth(4)
-        g.rectangle('line', margin - padding,
-                    y - self.font:getHeight()/2 - padding,
-                    self.box:getWidth() - 20, th + 2*padding)
+        g.rectangle('line', margin - padding, y - self.font:getHeight()/2 - padding, self.box:getWidth() - 20, th + 2*padding)
       end
       y = y + step
     end

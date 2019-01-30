@@ -1,14 +1,14 @@
 
 local CharCursor = new 'graphics.drawable' {
   characters = nil,
-  current = 1,
-  confirm = function() end,
-  cancel = function() end
+  current    = 1,
+  confirm    = function() end,
+  cancel     = function() end
 }
 
 function CharCursor:init()
   self.characters = self.characters or {}
-  self.current = 1
+  self.current    = 1
 end
 
 function CharCursor:update(dt)
@@ -35,4 +35,3 @@ function CharCursor:onDraw()
 end
 
 return CharCursor
-

@@ -1,5 +1,4 @@
 
 return {
-  'fighter', 'fighter', 'fighter', 'fighter'
+    'fighter', 'fighter', 'fighter', 'fighter'
 }
-

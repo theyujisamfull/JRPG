@@ -1,25 +1,25 @@
 
 local Avatar = new 'graphics.composite' {
   charactername = 'slime',
-  side = 'right',
-  counter = 0
+  side          = 'right',
+  counter       = 0
 }
 
 local COLORS = {
   right = { .6, .6, .9 },
-  left = { .9, .6, .6 }
+  left  = { .9, .6, .6 }
 }
 
 local BARS = {
   right = 'graphics.leftbar',
-  left = 'graphics.rightbar'
+  left  = 'graphics.rightbar'
 }
 
 function Avatar:init()
   self.character = require('database.characters.' .. self.charactername)
   self.sprite = new 'graphics.sprite' {
     filename = self.character.sprite,
-    color = COLORS[self.side],
+    color    = COLORS[self.side],
     position = new(Vec) {}
   }
   self.lifebar = new(BARS[self.side]) {
@@ -28,7 +28,7 @@ function Avatar:init()
   self.cursor = new 'graphics.polygon' {
     position = new(Vec) { 0, -64 },
     vertices = { -16, 0, 16, 0, 0, 20 },
-    visible = false
+    visible  = false
   }
   self:add(new 'graphics.shadow' { position = new(Vec) { 0, 48 } })
   self:add(self.sprite)
@@ -51,4 +51,3 @@ function Avatar:update(dt)
 end
 
 return Avatar
-

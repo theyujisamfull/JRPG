@@ -10,7 +10,7 @@ local FontLoader = new(Object) {
 --  Sobrescreve o registro anterior se houver.
 function FontLoader:load(font_name, path_to_font_file)
   self.loaded[font_name] = {
-      path = path_to_font_file,
+      path  = path_to_font_file,
       fonts = {}
   }
 end
@@ -50,4 +50,3 @@ function FontLoader:use(font_name_or_font, size, temporary)
 end
 
 return FontLoader
-

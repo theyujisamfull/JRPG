@@ -1,6 +1,6 @@
 
 local Graphics = new(Object) {
-  layers = nil,
+  layers  = nil,
   focused = nil
 }
 
@@ -39,4 +39,3 @@ function Graphics:drawLayers()
 end
 
 return Graphics
-

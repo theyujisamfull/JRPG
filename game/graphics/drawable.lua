@@ -1,12 +1,12 @@
 
 local Drawable = new(Object) {
-  visible = true,
+  visible   = true,
   destroyed = false,
 }
 
 function Drawable:init()
   self.position = self.position or new(Vec) {}
-  self.box = self.box or new(Box) {}
+  self.box      = self.box      or new(Box) {}
 end
 
 function Drawable:isDestroyed()
@@ -48,4 +48,3 @@ function Drawable:draw()
 end
 
 return Drawable
-

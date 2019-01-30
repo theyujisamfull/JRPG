@@ -4,4 +4,3 @@ return {
     sprite = 'brutal-helm',
     charname = 'fighter',
 }
-

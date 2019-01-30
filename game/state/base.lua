@@ -1,27 +1,26 @@
 
 local Base = new(Object) {
-  stack = nil -- provided by surpevising state stack
+    stack = nil -- provided by surpevising state stack
 }
 
 function Base:onEnter(params)
-  -- abstract method
+    -- abstract method
 end
 
 function Base:onLeave()
-  -- abstract method
+    -- abstract method
 end
 
 function Base:onSuspend()
-  -- abstract method
+    -- abstract method
 end
 
 function Base:onResume()
-  -- abstract method
+    -- abstract method
 end
 
 function Base:onUpdate(dt)
-  -- abstract method
+    -- abstract method
 end
 
 return Base
-

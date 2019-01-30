@@ -1,5 +1,4 @@
 
 return {
-  'slime', 'slime'
+    'slime', 'slime'
 }
-

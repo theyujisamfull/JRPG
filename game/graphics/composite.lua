@@ -1,6 +1,5 @@
 
-local Composite = new 'graphics.drawable' {
-}
+local Composite = new 'graphics.drawable' {}
 
 function Composite:init()
   self.drawables = self.drawables or {}
@@ -17,4 +16,3 @@ function Composite:onDraw()
 end
 
 return Composite
-

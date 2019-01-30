@@ -4,4 +4,3 @@ return {
     sprite = 'wizard-face',
     charname = 'wizard',
 }
-

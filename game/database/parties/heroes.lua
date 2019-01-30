@@ -1,5 +1,4 @@
 
 return {
-  'fighter', 'ranger', 'wizard', 'vampire'
+    'fighter', 'ranger', 'wizard', 'vampire'
 }
-

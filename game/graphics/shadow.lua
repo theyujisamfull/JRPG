@@ -8,4 +8,3 @@ function Shadow:onDraw()
 end
 
 return Shadow
-

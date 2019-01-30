@@ -25,4 +25,3 @@ function Layer:draw()
 end
 
 return Layer
-
