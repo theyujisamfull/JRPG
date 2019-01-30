@@ -4,6 +4,8 @@ local Character = new(Object) {
     sprite     = nil,
     charname   = nil,
     avatar     = nil,
+    power      = nil,
+    speed      = nil
 }
 
 function Character:init()
@@ -11,6 +13,8 @@ function Character:init()
     vida_atual = self.vida_atual or self.vida_max
     sprite     = self.sprite
     avatar     = self.avatar
+    power      = self.power or 20
+    speed      = self.speed or 20
 end
 
 function Character:updateLife(dano)
