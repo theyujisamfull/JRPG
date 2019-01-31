@@ -31,6 +31,7 @@ function Battle:loadParty(side, name)
                 vida_atual = char.vida_max,
                 sprite = char.sprite,
                 charname = char.charname,
+                power = char.power,
                 avatar = new 'graphics.avatar' {
                         charactername = char.charname,
                         side = side,
