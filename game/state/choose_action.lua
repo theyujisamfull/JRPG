@@ -47,7 +47,6 @@ end
 function ChooseAction:fight()
     self.action = 'attack'
     self.targets = { unpack(self.battle.left.characters) }
-    -- Calcular dano e reduzir barra de vida
     self.stack:push('choose_target', self.battle, self.targets)
 end
 
