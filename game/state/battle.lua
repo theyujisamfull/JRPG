@@ -26,7 +26,13 @@ function Battle:loadParty(side, name)
         elseif side == 'left' then x = 480 - 80 * i end
         local char = require('database.characters.' .. charname)
         --char.side = side
-        party.characters[i] = new (Character) {
+        --[[char.avatar = new 'graphics.avatar' {
+            charactername = char.charname,
+            side = side,
+            position = new(Vec) { x, i * 120 },
+            drawables = {},
+        }]]
+        party.characters[i] = new 'database.character' {
                 vida_max = char.vida_max,
                 vida_atual = char.vida_max,
                 sprite = char.sprite,

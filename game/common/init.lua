@@ -16,4 +16,4 @@ Object = new { } { }
 
 Vec = require 'common.vec'
 Box = require 'common.box'
-Character = require 'common.character'
+--Character = require 'common.character'
