@@ -4,4 +4,5 @@ return {
     sprite = 'brutal-helm',
     charname = 'fighter',
     power = 30,
+    speed = 25,
 }

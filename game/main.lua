@@ -25,6 +25,9 @@ function love.load()
 end
 
 function love.update(dt)
+    if _state_stack.top == 0 then
+        _state_stack:push('battle', _graphics)
+    end
     _state_stack:getCurrentState():onUpdate(dt)
     _graphics:update(dt)
 end

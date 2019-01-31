@@ -46,7 +46,7 @@ end
 
 function ChooseAction:fight()
     self.action = 'attack'
-    self.targets = { unpack(self.battle.left.characters) }
+    self.targets = { unpack(self.battle[self.battle.PARTIES[self.battle.current_party%2+1]].characters) }
     self.stack:push('choose_target', self.battle, self.targets)
 end
 

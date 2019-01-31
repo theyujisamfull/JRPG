@@ -8,12 +8,12 @@ function ExecuteAction:onEnter(battle, action)
     if name == 'attack' then
         local target = params.target
         local character = battle:currentCharacter()
-        local damage = character.power
-        target:updateLife(damage) --colocar o power aqui, tá retornando nulo, não entendi pq
+        local damage = -1 * character.power
+        target:updateLife(damage)
         battle.graphics:add('fx', new 'graphics.notification' {
             position = new(Vec) { target.avatar.position:get() },
             color = { .9, .9, .2 },
-            text = "" .. (-1)*damage -- Mudar pro damage tbm
+            text = damage -- Mudar pro damage tbm
         })
         self.delay = 1.0
     elseif name == 'item' then
