@@ -87,7 +87,7 @@ function Battle:onResume()
         end
         if #self.right.characters == 0 then
             self.stack:pop()
-            while()
+            --while()    While inutil até então
         else
             self:currentCharacter().avatar:hideCursor()
             --direita ou esquerda
