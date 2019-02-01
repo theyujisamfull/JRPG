@@ -2,12 +2,12 @@
 --local PARTIES = { 'right', 'left' }
 
 local Battle = new 'state.base' {
-    PARTIES = { 'right', 'left' },
-    graphics = nil,
+    PARTIES       = { 'right', 'left' },
+    graphics      = nil,
     current_party = 1,
-    current_char = 1,
-    next_action = nil,
-    delay = 0
+    current_char  = 1,
+    next_action   = nil,
+    delay         = 0
 }
 
 function Battle:onEnter(graphics)
@@ -25,8 +25,8 @@ function Battle:loadParty(side, name)
     }
     for i, charname in ipairs(charnames) do
         local x
-        if side == 'right' then x = W - 480 + 80 * i
-        elseif side == 'left' then x = 480 - 80 * i end
+        if side     == 'right' then x = W - 480 + 80 * i
+        elseif side == 'left'  then x = 480 - 80 * i end
         local char = require('database.characters.' .. charname)
         --char.side = side
         --[[char.avatar = new 'graphics.avatar' {
@@ -36,18 +36,18 @@ function Battle:loadParty(side, name)
             drawables = {},
         }]]
         party.characters[i] = new 'database.character' {
-                vida_max = char.vida_max,
+                vida_max   = char.vida_max,
                 vida_atual = char.vida_max,
-                sprite = char.sprite,
-                charname = char.charname,
-                power = char.power,
-                cooldown = char.cooldown,
-                speed = char.speed,
-                avatar = new 'graphics.avatar' {
+                sprite     = char.sprite,
+                charname   = char.charname,
+                power      = char.power,
+                cooldown   = char.cooldown,
+                speed      = char.speed,
+                avatar     = new 'graphics.avatar' {
                         charactername = char.charname,
-                        side = side,
-                        position = new(Vec) { x, i * 120 },
-                        drawables = {},
+                        side          = side,
+                        position      = new(Vec) { x, i * 120 },
+                        drawables     = {},
                 }
         }
 
@@ -58,7 +58,7 @@ function Battle:loadParty(side, name)
 end
 
 function Battle:onResume()
-    
+
     if self.next_action then
         self.stack:push('execute_action', self, self.next_action)
         self.next_action = nil
@@ -76,7 +76,7 @@ function Battle:onResume()
                     destroy[i] = true
                 else
                     destroy[i] = false
-                end   
+                end
             end
             for i = #destroy, 1, -1 do
                 if destroy[i] then
@@ -108,7 +108,7 @@ function Battle:onResume()
         end
         --self:currentCharacter().cooldown = 0
     end
-    
+
 end
 
 function Battle:onUpdate(dt)
@@ -127,7 +127,7 @@ end
 function Battle:onLeave()
     self.graphics.layers.entities = new 'graphics.layer' {}
     self.current_party = 1
-    self.current_char = 1
+    self.current_char  = 1
 end
 
 function Battle:currentCharacter()
@@ -136,7 +136,7 @@ end
 
 function Battle:setNextAction(name, params)
     self.next_action = {
-        name = name,
+        name   = name,
         params = params
     }
 end
