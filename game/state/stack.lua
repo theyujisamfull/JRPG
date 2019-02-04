@@ -23,6 +23,7 @@ function Stack:getCurrentState()
 end
 
 function Stack:push(statename, ...)
+    print('push\n')
     local current = self:getCurrentState() if current then
         current:onSuspend()
     end
@@ -32,6 +33,7 @@ function Stack:push(statename, ...)
 end
 
 function Stack:pop()
+    print('pop\n')
     self:getCurrentState():onLeave()
     self.states[self.top] = false
     self.top = self.top - 1

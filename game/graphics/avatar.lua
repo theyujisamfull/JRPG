@@ -25,13 +25,29 @@ function Avatar:init()
     self.lifebar = new(BARS[self.side]) {
         color = { .2, .8, .2 }, value = 1
     }
+    if self.side == 'left' then
+        self.energybar = new(BARS['right']) {
+            color = { .2, .2, .8 }, value = 1
+        }
+    else
+        self.energybar = new(BARS['left']) {
+            color = { .2, .2, .8 }, value = 1
+        }
+    end
     self.cursor = new 'graphics.polygon' {
         position = new(Vec) { 0, -64 },
         vertices = { -16, 0, 16, 0, 0, 20 },
         visible  = false
     }
+    --[[self.cooldown = new 'graphics.polygon' {
+        position = new(Vec) { 0, 32 },
+        vertices = { -8, -8, -8, 8, 8, 8, 8, -8 },
+        color = { .8, .2, .2 }
+    }
+    self.add(self.cooldown)]]
     self:add(new 'graphics.shadow' { position = new(Vec) { 0, 48 } })
     self:add(self.sprite)
+    self:add(self.energybar)
     self:add(self.lifebar)
     self:add(self.cursor)
     self.counter = love.math.random() * 2 * math.pi

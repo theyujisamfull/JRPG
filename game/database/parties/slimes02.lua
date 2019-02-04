@@ -1,0 +1,4 @@
+
+return {
+    'slime', 'slime', 'slime',
+}

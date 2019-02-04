@@ -3,6 +3,7 @@ require 'common'
 
 local _state_stack
 local _graphics
+local counter = 0
 
 function love.load()
 
@@ -25,6 +26,11 @@ function love.load()
 end
 
 function love.update(dt)
+    counter = counter + dt
+    if counter > 0.5 then
+        counter = 0
+        print(_state_stack)
+    end
     if _state_stack.top == 0 then
         _state_stack:push('battle', _graphics)
     end

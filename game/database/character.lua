@@ -7,24 +7,32 @@ local Character = new(Object) {
     power      = 100,
     speed      = 50,
     cooldown   = 100,
+    energia_max = 100,
+    energia_atual = nil,
 }
 
 function Character:init()
-    charname   = self.charname
-    vida_max   = self.vida_max
-    vida_atual = self.vida_atual or self.vida_max
-    sprite     = self.sprite
-    avatar     = self.avatar
-    power      = self.power
-    speed      = self.speed
-    cooldown   = self.cooldown
+    assert(self.charname)
+    --self.vida_max   = self.vida_max
+    self.vida_atual = self.vida_max
+    --self.sprite     = self.sprite
+    --self.avatar     = self.avatar
+    --self.power      = self.power
+    --self.speed      = self.speed
+    --self.cooldown   = self.cooldown
+    self.energia_atual = self.energia_max
 end
 
 function Character:updateLife(dL)
     self.vida_atual = self.vida_atual + dL
     self.avatar.lifebar.value = self.vida_atual / self.vida_max
-    --self.avatar:destroy()
-    --print('tirou '.. dano)
+    if self.vida_atual <= 0 then
+        self.avatar:destroy()
+    end
+end
+
+function Character:updateEnergy()
+    
 end
 
 return Character
